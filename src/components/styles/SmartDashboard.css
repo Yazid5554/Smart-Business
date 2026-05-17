@@ -1,0 +1,137 @@
+.smart-dashboard-section {
+  width: 100%;
+  padding: 100px 0;
+  position: relative;
+  z-index: 10;
+  background-color: var(--backgroundColor);
+}
+
+.dashboard-container {
+  width: var(--cWidth);
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-header h2 {
+  font-size: 50px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dashboard-header h2 span {
+  color: var(--accentColor);
+}
+
+.dashboard-header p {
+  color: #adacac;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.physics-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.btn-add, .btn-reset {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+}
+
+.btn-add.sensor { background: #10b981; }
+.btn-add.sensor:hover { background: #059669; box-shadow: 0 0 15px #10b981; }
+
+.btn-add.server { background: #3b82f6; }
+.btn-add.server:hover { background: #2563eb; box-shadow: 0 0 15px #3b82f6; }
+
+.btn-add.ai { background: #c481ff; color: #111;}
+.btn-add.ai:hover { background: #a855f7; box-shadow: 0 0 15px #c481ff; }
+
+.btn-reset {
+  background: transparent;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+}
+.btn-reset:hover { background: rgba(239, 68, 68, 0.1); }
+
+.physics-dashboard-wrapper {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px;
+  height: 600px;
+}
+
+.physics-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #363636;
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.stat-card:hover {
+  border-color: var(--accentColor);
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #adacac;
+  margin: 0;
+}
+
+.stat-value {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+
+.stat-value.highlight {
+  color: #10b981;
+}
+
+.physics-canvas-container {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #363636;
+  background: #050505;
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+}
+
+@media only screen and (max-width: 900px) {
+  .physics-dashboard-wrapper {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .physics-canvas-container {
+    height: 400px;
+  }
+}
